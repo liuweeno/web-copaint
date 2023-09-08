@@ -1,76 +1,108 @@
 <template>
-  <div>
-
-    <!-- logo和头部 -->
-    <div style="width: 100%;height: 56px;
-      margin-bottom: 0px;padding-top: 0px;
-      border-bottom: 1px solid #30343f;
-      padding-bottom: 10px;position: relative;
-          ">
-            <span style="color: white;float: left;margin-left: 40px;
-            margin-top: 10px;flex-direction: column;display: flex;
-            ">
-              <img src="../assets/logo1.png"
-              style="width: 40px;height: 40px;
-              margin-top: 5px;"
-              alt='' width="200">
-
-              <span style="margin-left: 50px;margin-top: 0px;
-              font-size: 21.03px;position: absolute;
-              /* font-weight: 100; */
-              color: rgba(255, 255, 255, 0.812);">元绘 CoPaint</span>
-              <span style="margin-left: 46px;margin-top: -17px;color: white;
-              /* font-family:'Courier New', Courier, monospace */
-              font-size: 10px;font-style: italic;font-family: 'Pacifico', cursive;
-              ">让创作变得更加简单</span>
-            </span>
-            <br>
-
-            <span style="color: white;float: left;margin-left: 1350px;
-            margin-top: 1px;flex-direction: column;display: flex;width: 90px;
-            position: absolute;
-            height: 40px;
-            ">
-              <button
-              style="background-color: #141416;border: 1px solid #77a2ff42;
-              color: #CDDCFF;padding: 5px;border-radius: 20px;  font-size: 14px;
-              padding: 5px            "
-              >登录/注册</button>
-            </span>
-
+  <section class="app-header">
+    <div class="container-introduce">
+      <div class="logo">
+        <div class="logos">
+          <img class="img-icon" src="@/assets/img/logo.png" alt="" />
+          <div class="content">
+            <span>元绘 CoPaint</span>
+            <img src="@/assets/img/home/slogan.png" alt="" />
+          </div>
+        </div>
       </div>
-
-  </div>
+      <el-button class="btn-login" type="primary">登陆/注册</el-button>
+    </div>
+  </section>
 </template>
-<script>
-export default {
-  name: 'APP',
-  data() {
-    return {
-      LogoUrl: '',
-    };
-  },
-  methods: {
-  },
-  created() {
-  },
-  mounted() {
-  },
-};
-</script>
-<style lang="scss" scoped>
-.vertical-container {
-  display: flex;
-  flex-direction: column;
-  // font-size: 10px;
-  inset-block: 0px;
-  margin-top: -60px;
-  margin-left: 100px;
+<script setup></script>
+<style lang="less" scoped>
+.app-header {
+  background-color: #141416;
+  height: 80px;
+  padding: 0 250px 0 250px;
+  border-bottom: #2d2d2f 1px solid;
+  .container-introduce {
+    height: 100%;
+    width: 100%;
+    .flex-mode(row, space-between, center);
+    .logo {
+      height: 100%;
+      width: 186px;
+      //border: red solid 1px;
+      .flex-mode(column, space-around, center);
+      .logos {
+        .flex-mode(row, flex-start);
+        //background-color: red;
+        height: 50px;
+        width: 100%;
+        .img-icon {
+          width: 40px;
+          height: 40px;
+        }
+        .content {
+          margin-left: 12px;
+          > span {
+            font-size: 21px;
+            font-family:
+              PingFangSC-Medium,
+              PingFang SC;
+            font-weight: 500;
+            color: #ffffff;
+            line-height: 29px;
+          }
+          > img {
+            width: 135px;
+            //height: 25px;
+          }
+        }
+      }
+      .document {
+        > span {
+          font-size: 14px;
+          font-family:
+            PingFangSC-Regular,
+            PingFang SC;
+          font-weight: 400;
+          color: rgba(205, 220, 255, 0.85);
+          line-height: 20px;
+          margin-right: 30px;
+          cursor: pointer;
+          &:hover {
+            color: #8e50ff;
+          }
+        }
+      }
+    }
+    .btn-login {
+      width: 110px;
+      height: 40px;
+      border-radius: 20px;
+      border: 2px solid rgba(119, 163, 255, 0.25);
+      background-color: transparent;
+      font-size: 14px;
+      font-family:
+        PingFangSC-Regular,
+        PingFang SC;
+      font-weight: 400;
+      color: rgba(205, 220, 255, 0.65);
+      line-height: 20px;
+    }
+  }
+  .copyright {
+    height: 80px;
+    width: 100%;
+    border-top: #353537 solid 1px;
+    .flex-mode(column, center ,flex-start);
+    > span {
+      font-size: 14px;
+      font-family:
+        PingFangSC-Regular,
+        PingFang SC;
+      font-weight: 400;
+      color: rgba(205, 220, 255, 0.85);
+      line-height: 20px;
+      color: #cddcff;
+    }
+  }
 }
-
-// .upper-span, .lower-span {
-//   display: inline-block;
-//   padding: 1px;
-// }
-
 </style>
